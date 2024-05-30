@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 function Login(){
-  const [email,]
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
     return(
     <div className="login">
       <h1>Login</h1>
