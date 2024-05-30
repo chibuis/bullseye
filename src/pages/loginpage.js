@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 function Login(){
-
-  return(
+  const [email,]
+    return(
     <div className="login">
       <h1>Login</h1>
       <form action="POST">
