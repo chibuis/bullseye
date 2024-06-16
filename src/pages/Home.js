@@ -8,8 +8,7 @@ const Home = () => {
         <div className="col-md-6">
           <h2 className="display-5">Launch and Scale Your Car Subscription Business.</h2>
           <p className="lead">
-            Manage your subscriptions, recurring payments, and track all your fleet in one place. Scale your car
-            subscription business through Circuly's sophisticated digital infrastructure.
+            Manage your subscriptions, recurring payments, and track all your fleet in one place.
           </p>
         </div>
         <div className="col-md-6 d-flex justify-content-end align-items-center">

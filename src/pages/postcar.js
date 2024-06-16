@@ -1,26 +1,46 @@
 import React from 'react';
 import benz from '../assets/benz.jpg';
+import { useEffect, useState } from 'react'
+import axios from "axios"
 
-const CarForm = () => {
+const DashboardAdmin = () => {
+  const [cars, setCars] = useState([])
+
+  useEffect(()=> {
+    // Make a request for a user with a given ID
+    axios.get('http://localhost:3001/car')
+    .then(function (response) {
+      // handle success
+      console.log(response);
+      setCars(response.data.data)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+  }, [])
   return (
     
-       <>
-      <div className='container'>
-        <div className='row'>
-          <div className="col-md-4" style={{ backgroundColor: 'grey' }}>
-          <img src={benz} alt="location" className="img-fluid" style={{ width: '100%', maxWidth: '430px' }} />
-          </div>
-          <div className="col-md-5" style={{ backgroundColor: 'grey' }}>
-            <h2 >VOLVO -S60</h2>
-            Volvo S60
-            <hr></hr>
-            Price:<b>$200</b>-Color: <b>Silver</b>- Transmission:<b>Automatic</b>-Type:<b>Hybrid</b>-Year:<b>2023</b>
-            <hr/>
+       <div className='d-flex flex-column gap-4'>
+      {cars.map(car => (
+        <div className='container'>
+          <div className='row'>
+            <div className="col-md-4" style={{ backgroundColor: 'grey' }}>
+            <img src={car.Image} alt="location" className="img-fluid" style={{ width: '100%', maxWidth: '430px' }} />
+            </div>
+            <div className="col-md-5" style={{ backgroundColor: 'grey' }}>
+              <h2 >{car.CarName}</h2>
+              {car.CarName}
+              <hr></hr>
+              Price:<b>${car.Price}</b>-Color: <b>{car.Color}</b>- Transmission:<b>{car.Transmission}</b>-Type:<b>{car.Type}</b>-Year:<b>{car.ManufacturingDate}</b>
+              <hr/>
+            </div>
           </div>
         </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
 };
 
-export default CarForm;
+export default DashboardAdmin;

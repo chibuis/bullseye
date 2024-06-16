@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
-const Navbar = () => {
+const NavbarAdmin = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow" >
@@ -12,27 +12,17 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="carlisting">Car listing</Link>
+            
+          <li className="nav-item">
+              <Link className="nav-link" to="postcar">Post car</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="search">Search</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="cardescription">About us</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="date">Date</Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="carpost">Add Car</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="postcar">Post car</Link>
-            </li>
+            
             <li className="nav-item">
               <Link className="nav-link" to="register">Signup</Link>
             </li>
@@ -45,4 +35,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarAdmin;
